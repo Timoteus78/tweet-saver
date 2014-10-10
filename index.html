@@ -44,7 +44,10 @@
     </section>
 
     <section ng-controller="StoreController as storeCtrl">
-        <droppable class="list-group ts-panel"  validate="validate()" drop="saveLocal()">
+        <div class="list-group ts-panel"
+             validate="validate()"
+             drop="saveLocal()"
+             droppable >
             <a href="#" class="list-group-item active"> <h4>Saved tweets<span class="badge pull-right">{{storeCtrl.tweets.length}}</span></h4></a>
             <div class="list-group-item" ng-hide="storeCtrl.hasTweets()">Drag and drop tweets here to save in local storage.</div>
             <a href="#"
@@ -59,7 +62,7 @@
                 <div class="ts-text" ng-bind-html="tweet.text | linky:'_blank'"></div>
                 <span class="ts-remove glyphicon glyphicon-remove-circle" ng-click="storeCtrl.remove($index)"></span>
             </a>
-        </droppable>
+        </div>
     </section>
 
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>

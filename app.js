@@ -82,7 +82,7 @@
             scope: {
                 drop: '&' //parent
             },
-            restrict: 'E',
+            restrict: 'A',
             link: function(scope, element){
                 var el = element[0];
                 el.addEventListener('dragover', function(e){

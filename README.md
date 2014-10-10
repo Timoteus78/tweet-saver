@@ -15,10 +15,10 @@ Uses html5 drag and drop + local storage. Created this project for learning purp
 
 ### Running locally:
 One way to run this application is by  using python's SimpleHTTPServer.
-From within the tweet-saver folder run
-```python -m SimpleHTTPServer [portnumber]```.
-In your browser go to
-```localhost:[portnumber]```.
+From within the tweet-saver folder run ```python -m SimpleHTTPServer [portnumber]```. 
+In your browser go to ```localhost:[portnumber]```.
+
+*Note: The data returned is the same as the Twitter API, but the structure may be slightly different due slight diffenences in how our library serializes/deserializes Twitter's response. Also, note that it's hosted on Heroku so it may take 30 seconds or so for the dyno to spin up but it should be quick if you use it consistently thereafter.*
 
 
 ### Application characteristics
