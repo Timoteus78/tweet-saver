@@ -1,0 +1,29 @@
+.ts-move {
+    cursor: move;
+}
+.drag {
+    opacity: 0.5;
+}
+.over {
+    border: 2px dashed green;
+}
+.over.ts-error{
+    border: 2px dashed red;
+}
+
+.ts-panel {
+    width: 45%;
+    margin: 2.5%;
+    float: left;
+}
+header {
+    text-align: center;
+}
+.ts-text {
+    width: 95%;
+}
+.ts-remove {
+    position: absolute;
+    top: 50%;
+    right: 3%;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="tweetSaver">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tweet Saver</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-info">
+
+    <header>
+        <h1>Tweet Saver</h1>
+    </header>
+
+    <section ng-controller="SearchController as searchCtrl">
+        <div class="list-group ts ts-panel">
+            <div class="list-group-item active">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-search"></span>
+                    <input type="text"
+                           class="form-control"
+                           ng-model="searchCtrl.query"
+                           ng-change="searchCtrl.update()"
+                           placeholder="Search Twitter">
+                </div>
+            </div>
+            <div class="list-group-item" ng-hide="searchCtrl.hasTweets()">Please enter something in the search field.</div>
+            <a href="#"
+               class="list-group-item ts-move"
+               ng-show="searchCtrl.hasTweets()"
+               ng-repeat="tweet in results"
+               ng-click="searchCtrl.saveTweet(tweet)"
+               tweet="{{tweet.id}}"
+               draggable >
+                <h4>
+                    <img ng-src="{{tweet.user.profileImageUrlHttps}}" class="profile-image img-circle">
+                    {{tweet.user.name}}
+                    <small>@{{tweet.user.screenName}}</small>
+                    <small class="pull-right">{{tweet.createdAt | date:'dd MMM yyyy'}}</small>
+                </h4>
+                <div ng-bind-html="tweet.text | linky:'_blank'"></div>
+            </a>
+        </div>
+    </section>
+
+    <section ng-controller="StoreController as storeCtrl">
+        <droppable class="list-group ts-panel"  validate="validate()" drop="saveLocal()">
+            <a href="#" class="list-group-item active"> <h4>Saved tweets<span class="badge pull-right">{{storeCtrl.tweets.length}}</span></h4></a>
+            <div class="list-group-item" ng-hide="storeCtrl.hasTweets()">Drag and drop tweets here to save in local storage.</div>
+            <a href="#"
+               class="list-group-item"
+               ng-repeat="tweet in storeCtrl.tweets">
+                <h4>
+                    <img ng-src="{{tweet.user.profileImageUrlHttps}}" class="profile-image img-circle">
+                    {{tweet.user.name}}
+                    <small>@{{tweet.user.screenName}}</small>
+                    <small class="pull-right">{{tweet.createdAt | date:'dd MMM yyyy'}}</small>
+                </h4>
+                <div class="ts-text" ng-bind-html="tweet.text | linky:'_blank'"></div>
+                <span class="ts-remove glyphicon glyphicon-remove-circle" ng-click="storeCtrl.remove($index)"></span>
+            </a>
+        </droppable>
+    </section>
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>

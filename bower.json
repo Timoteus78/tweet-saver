@@ -1,0 +1,19 @@
+{
+  "name": "tweet-saver",
+  "version": "0.0.0",
+  "authors": [
+    "Timo van der Schuit <timoteus78@gmail.com>"
+  ],
+  "description": "Saving tweets in local storage using drag and drop.",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "bootstrap": "~3.2.0"
+  }
+}
