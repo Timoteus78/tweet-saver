@@ -116,4 +116,4 @@
         };
     }]);
 
-})(angular.module('tweetSaver', ['ngSanitize']));
+})(angular.module('tvds-tweetSaver', ['ngSanitize']));
