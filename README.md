@@ -1,16 +1,27 @@
-Getting up and running
-----------------------
+Tweet-saver
+===========
+Simple angular / bootstrap application that allows you to query for tweets. 
+Uses html5 drag and drop + local storage. Created this project for learning purposes.
 
-Option 1: File Manager
-Open index.html with your favourite browser.
-Option 2: Using python
+### Installation:
+- Install git
+- Install node.js
+- Install grunt, in git bash type: ```npm install -g grunt-cli```
+- Install bower, in git bash type: ```npm install -g bower```
+- In git bash type: ```git clone https://github.com/Timoteus78/tweet-saver.git```
+- Change directory to tweet-saver
+- In git bash type: ```npm install```
+- In git bash type: ```bower install```
+
+### Running locally:
+One way to run this application is by  using python's SimpleHTTPServer.
 From within the tweet-saver folder run
-python -m SimpleHTTPServer [portnumber]
-In your browser go to localhost:[portnumber]
+```python -m SimpleHTTPServer [portnumber]```.
+In your browser go to
+```localhost:[portnumber]```.
 
 
-Implemented characteristics
----------------------------
+### Application characteristics
 - one page webapp
 - search field
 - column displaying 10 tweets based on query
